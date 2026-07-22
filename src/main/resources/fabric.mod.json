@@ -4,7 +4,7 @@
   "version": "${version}",
   "name": "Untitled Mod",
   "description": "",
-  "authors": [],
+  "authors": ["Mimbo", "VAKTONMAYO"],
   "contact": {},
   "license": "All-Rights-Reserved",
   "icon": "assets/untitled/icon.png",
