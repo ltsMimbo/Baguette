@@ -2,6 +2,7 @@ package org.baguette.untitled.client.datagen;
 
 import net.fabricmc.fabric.api.client.datagen.v1.provider.FabricModelProvider;
 import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
+import org.baguette.untitled.block.ModBlocks;
 import org.baguette.untitled.item.ModItems;
 import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelGenerators;
@@ -14,7 +15,7 @@ public class ModModelProvider extends FabricModelProvider {
 
     @Override
     public void generateBlockStateModels(BlockModelGenerators blockModelGenerators) {
-
+        blockModelGenerators.createTrivialCube(ModBlocks.RUBY_BLOCK);
     }
 
     @Override

@@ -15,7 +15,8 @@ import java.util.function.Function;
 public class ModItems {
     public static final Item RUBY = registerItem("ruby", Item::new);
 
-    // REGISTER
+
+
     private static Item registerItem(String name, Function<Item.Properties, Item> function) {
         return Registry.register(BuiltInRegistries.ITEM, Identifier.fromNamespaceAndPath(Untitled.MOD_ID, name),
                 function.apply(new Item.Properties().setId(ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(Untitled.MOD_ID, name)))));
@@ -24,7 +25,6 @@ public class ModItems {
     public static void registerModItems() {
         Untitled.LOGGER.info("Registering Mod Items for {}.", Untitled.MOD_ID.toUpperCase());
 
-        // CREATIVE TAB ORGANIZATION
         CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.INGREDIENTS).register(output -> {
             output.accept(RUBY);
         });

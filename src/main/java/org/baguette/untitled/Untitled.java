@@ -1,6 +1,7 @@
 package org.baguette.untitled;
 
 import net.fabricmc.api.ModInitializer;
+import org.baguette.untitled.block.ModBlocks;
 import org.baguette.untitled.item.ModItems;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -12,5 +13,6 @@ public class Untitled implements ModInitializer {
     @Override
     public void onInitialize() {
         ModItems.registerModItems();
+        ModBlocks.registerModBlocks();
     }
 }
