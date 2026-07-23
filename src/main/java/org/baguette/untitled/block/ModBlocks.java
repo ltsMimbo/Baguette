@@ -25,7 +25,9 @@ public class ModBlocks {
 
     private static Block registerBlock(String name, Function<BlockBehaviour.Properties, Block> function) {
         Block toRegister = function.apply(BlockBehaviour.Properties.of().setId(ResourceKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(Untitled.MOD_ID, name))));
-        return Registry.register(BuiltInRegistries.BLOCK, Identifier.fromNamespaceAndPath(Untitled.MOD_ID, name), toRegister);
+        Block registeredBlock = Registry.register(BuiltInRegistries.BLOCK, Identifier.fromNamespaceAndPath(Untitled.MOD_ID, name), toRegister);
+        registerBlockItem(name, registeredBlock);
+        return registeredBlock;
     }
 
     private static void registerBlockItem(String name, Block block) {
@@ -38,7 +40,7 @@ public class ModBlocks {
         Untitled.LOGGER.info("Registering Mod Blocks for {}.", Untitled.MOD_ID.toUpperCase());
 
         CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.BUILDING_BLOCKS).register(output -> {
-            output.accept(RUBY_BLOCK);
+            output.accept(RUBY_BLOCK.asItem());
         });
     }
 }
